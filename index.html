@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es" class="light scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYXEN NIGHT CLUB // CURATED DROPS</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Syne"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection { background-color: #000; color: #fff; }
+    .editorial-shadow { box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08); }
+    .glass-nav {
+      background: rgba(250, 250, 250, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .modal-glass {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+    }
+    .img-zoom { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .group:hover .img-zoom { transform: scale(1.03); }
+  </style>
+</head>
+<body class="bg-[#f8f8f8] text-neutral-900 min-h-screen flex flex-col antialiased selection:bg-black selection:text-white">
+
+  <!-- TOP BANNER CONCEPTO NYXEN -->
+  <div class="bg-black text-white text-[10px] sm:text-xs py-2.5 px-4 text-center tracking-[0.2em] font-bold uppercase">
+    ✦ NYXEN NIGHT CLUB &nbsp;•&nbsp; SELECCIÓN DE IMPORTACIÓN EXCLUSIVA
+  </div>
+
+  <!-- NAVBAR CON BOTÓN "¿CÓMO FUNCIONA?" -->
+  <header class="sticky top-0 z-40 px-3 md:px-8 py-3">
+    <div class="max-w-7xl mx-auto h-16 flex items-center justify-between glass-nav px-5 md:px-8 rounded-full border border-black/10 editorial-shadow">
+      <a href="#" onclick="showNivel1()" class="font-display font-extrabold text-lg md:text-xl tracking-wider uppercase flex items-center gap-3">
+        <!-- ISOTIPO NEGRO DE NYXEN -->
+        <img src="https://lh3.googleusercontent.com/d/1A9Jec8E9k-swdFMxf0xRYGfgnYEQ5i2j=s1000" alt="NYXEN" class="w-7 h-7 object-contain">
+        <div class="flex flex-col leading-none">
+          <span class="font-display font-extrabold text-base md:text-lg tracking-wider uppercase">NYXEN</span>
+          <span class="text-[7px] font-bold tracking-[0.2em] text-neutral-400 uppercase">NIGHT CLUB</span>
+        </div>
+      </a>
+
+      <!-- BOTÓN DE INFORMACIÓN -->
+      <div>
+        <button onclick="openInfoModal()" class="text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase bg-black text-white px-4 py-2 rounded-full hover:bg-neutral-800 transition shadow-sm flex items-center gap-1.5">
+          <span>✦</span>
+          <span>¿CÓMO FUNCIONA?</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NIVEL 1: SELECCIÓN DE SECCIÓN -->
+  <section id="nivel-1" class="min-h-[82vh] flex flex-col justify-between pt-4">
+    <div class="text-center px-4 py-6 max-w-2xl mx-auto space-y-3">
+      <span class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-black/60 border border-black/15 px-4 py-1.5 rounded-full bg-white shadow-sm inline-block">
+        VOTACION // 001
+      </span>
+      <h1 class="text-3xl md:text-5xl font-display font-extrabold uppercase tracking-tight text-black leading-tight">
+        ¿Qué prendas deben integrar la proxima importación?
+      </h1>
+      <p class="text-xs md:text-sm text-black/60 max-w-md mx-auto font-medium">
+        Somos meticulosos con la calidad, y gramaje de las prendas y/u accesorios, tu votación vale mucho.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 flex-1 min-h-[55vh] gap-4 px-4 md:px-8 pb-8 max-w-7xl mx-auto w-full">
+      <div onclick="selectGender('mujer')" class="group relative cursor-pointer overflow-hidden rounded-3xl border border-black/10 flex items-end justify-center p-8 md:p-12 min-h-[360px] bg-neutral-200 editorial-shadow">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" class="img-zoom absolute inset-0 w-full h-full object-cover object-top brightness-90" alt="Mujer">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="relative z-10 text-center space-y-1 text-white">
+          <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-white/80 block">SECCIÓN FEMENINA</span>
+          <h2 class="text-4xl md:text-6xl font-display font-extrabold tracking-tight uppercase">MUJER</h2>
+        </div>
+      </div>
+
+      <div onclick="selectGender('hombre')" class="group relative cursor-pointer overflow-hidden rounded-3xl border border-black/10 flex items-end justify-center p-8 md:p-12 min-h-[360px] bg-neutral-200 editorial-shadow">
+        <img src="https://plus.unsplash.com/premium_photo-1727942419945-1908baae3c8e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" class="img-zoom absolute inset-0 w-full h-full object-cover object-top brightness-90" alt="Hombre">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="relative z-10 text-center space-y-1 text-white">
+          <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-white/80 block">SECCIÓN MASCULINA</span>
+          <h2 class="text-4xl md:text-6xl font-display font-extrabold tracking-tight uppercase">HOMBRE</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIVEL 2: 3 CATEGORÍAS PRINCIPALES -->
+  <section id="nivel-2" class="hidden min-h-[80vh] flex flex-col pt-6 px-4 md:px-8 max-w-7xl mx-auto w-full">
+    <div class="flex items-center justify-between border-b border-black/10 pb-4 mb-8">
+      <div>
+        <button onclick="showNivel1()" class="text-[11px] text-black/50 hover:text-black uppercase font-bold tracking-[0.2em] flex items-center gap-1.5 mb-1.5 transition">
+          &larr; CAMBIAR SECCIÓN
+        </button>
+        <h2 id="nivel-2-title" class="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight text-black">COLECCIÓN HOMBRE</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1 mb-12">
+      <div onclick="selectCategory('superior')" class="group relative cursor-pointer overflow-hidden rounded-3xl border border-black/10 min-h-[350px] flex items-end p-8 bg-neutral-200 editorial-shadow">
+        <img id="img-cat-superior" src="" class="img-zoom absolute inset-0 w-full h-full object-cover object-top brightness-85" alt="Superior">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+        <div class="relative z-10 space-y-1 text-white">
+          <span class="text-[10px] text-white/70 uppercase font-bold tracking-[0.2em]">SECCIÓN 01</span>
+          <h3 class="text-2xl font-display font-extrabold uppercase tracking-tight">PRENDA SUPERIOR &rarr;</h3>
+          <p class="text-xs text-white/80">Corsets, Tops, Playeras &amp; Hoodies</p>
+        </div>
+      </div>
+
+      <div onclick="selectCategory('inferior')" class="group relative cursor-pointer overflow-hidden rounded-3xl border border-black/10 min-h-[350px] flex items-end p-8 bg-neutral-200 editorial-shadow">
+        <img id="img-cat-inferior" src="" class="img-zoom absolute inset-0 w-full h-full object-cover object-top brightness-85" alt="Inferior">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+        <div class="relative z-10 space-y-1 text-white">
+          <span class="text-[10px] text-white/70 uppercase font-bold tracking-[0.2em]">SECCIÓN 02</span>
+          <h3 class="text-2xl font-display font-extrabold uppercase tracking-tight">PRENDA INFERIOR &rarr;</h3>
+          <p class="text-xs text-white/80">Pants Slim, Cargo &amp; Shorts</p>
+        </div>
+      </div>
+
+      <div onclick="selectCategory('accesorios')" class="group relative cursor-pointer overflow-hidden rounded-3xl border border-black/10 min-h-[350px] flex items-end p-8 bg-neutral-200 editorial-shadow">
+        <img id="img-cat-accesorios" src="" class="img-zoom absolute inset-0 w-full h-full object-cover object-center brightness-85" alt="Accesorios">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+        <div class="relative z-10 space-y-1 text-white">
+          <span class="text-[10px] text-white/70 uppercase font-bold tracking-[0.2em]">SECCIÓN 03</span>
+          <h3 class="text-2xl font-display font-extrabold uppercase tracking-tight">ACCESORIOS &rarr;</h3>
+          <p class="text-xs text-white/80">Aretes Chanel, Collares &amp; Joyería</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIVEL 3: CATÁLOGO DE PRENDAS -->
+  <section id="nivel-3" class="hidden max-w-7xl mx-auto px-4 md:px-8 pt-6 pb-20 w-full flex-1">
+    <div class="border-b border-black/10 pb-6 mb-8 space-y-4">
+      <div class="flex items-center justify-between">
+        <button onclick="showNivel2()" class="text-[11px] text-black/50 hover:text-black uppercase font-bold tracking-[0.2em] flex items-center gap-1.5 transition">
+          &larr; VOLVER A CATEGORÍAS
+        </button>
+        <span id="breadcrumb-tag" class="text-[10px] text-black font-semibold uppercase tracking-[0.2em] bg-white border border-black/10 px-3.5 py-1.5 rounded-full shadow-sm">
+          NYXEN // HOMBRE // SUPERIOR
+        </span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <h2 id="nivel-3-title" class="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight text-black">PRENDA SUPERIOR</h2>
+        <div id="subfilters-container" class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-wider"></div>
+      </div>
+    </div>
+
+    <!-- GRID DE PRENDAS -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+  </section>
+
+  <!-- MODAL DE INFORMACIÓN -->
+  <div id="info-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="modal-glass border border-black/10 w-full max-w-md rounded-3xl overflow-hidden shadow-2xl relative p-6 md:p-7 space-y-5">
+      <button onclick="closeInfoModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-black text-sm font-bold w-8 h-8 flex items-center justify-center bg-neutral-100 rounded-full">✕</button>
+
+      <div class="space-y-1">
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.2em] bg-black text-white px-2.5 py-0.5 rounded-full">NYXEN NIGHT CLUB</span>
+        <h3 class="font-display font-extrabold text-xl uppercase text-black pt-2">¿Cómo funciona?</h3>
+        <p class="text-xs text-neutral-600 font-medium leading-relaxed">
+          Estamos preparando la selección oficial de prendas para nuestro próximo pedido de importación en Playa del Carmen. Para garantizar exclusividad y evitar inventario sobrante, producimos únicamente los diseños con mayor interés real.
+        </p>
+      </div>
+
+      <div class="space-y-3.5 border-t border-black/10 pt-4">
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 mt-0.5">1</div>
+          <p class="text-xs text-neutral-800 font-medium leading-snug">
+            <strong class="text-black font-extrabold uppercase tracking-wider text-[11px] block mb-0.5">Evalúa el catálogo</strong>
+            Explora los cortes disponibles y selecciona la talla de tu interés.
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 mt-0.5">2</div>
+          <p class="text-xs text-neutral-800 font-medium leading-snug">
+            <strong class="text-black font-extrabold uppercase tracking-wider text-[11px] block mb-0.5">Selección por demanda</strong>
+            Los modelos con mayor respaldo integrarán la colección del Drop oficial.
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 mt-0.5">3</div>
+          <p class="text-xs text-neutral-800 font-medium leading-snug">
+            <strong class="text-black font-extrabold uppercase tracking-wider text-[11px] block mb-0.5">Acceso preferencial</strong>
+            Al registrar tu contacto, aseguras acceso prioritario y precio especial de preventa.
+          </p>
+        </div>
+      </div>
+
+      <button onclick="closeInfoModal()" class="w-full bg-black text-white py-3.5 rounded-xl font-display font-extrabold uppercase tracking-[0.15em] text-xs hover:bg-neutral-800 transition shadow-md">
+        ENTENDIDO // EXPLORAR COLECCIÓN
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DE ENCUESTA -->
+  <div id="vote-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="modal-glass border border-black/10 w-full max-w-md rounded-3xl overflow-hidden shadow-2xl relative p-6 md:p-8 space-y-5">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-black text-sm font-bold w-8 h-8 flex items-center justify-center bg-neutral-100 rounded-full">✕</button>
+
+      <div>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.2em] bg-black text-white px-2.5 py-0.5 rounded-full">EVALUACIÓN DE DISEÑO</span>
+        <h3 id="modal-product-title" class="font-display font-extrabold text-base uppercase text-black mt-2">PRODUCTO</h3>
+        <p id="modal-product-price" class="text-xs font-bold text-neutral-500 mt-0.5">Precio estimado: $0 MXN</p>
+      </div>
+
+      <form id="vote-form" onsubmit="submitVote(event)" class="space-y-4">
+        <input type="hidden" id="modal-product-id" name="productId">
+        <input type="hidden" id="modal-product-name" name="productName">
+
+        <!-- 1. INTERÉS CON CONTROL DIRECTO JS -->
+        <div>
+          <label class="block text-[10px] uppercase tracking-[0.2em] font-extrabold text-black mb-2">1. ¿Lo comprarías si estuviera disponible?</label>
+          <div class="grid grid-cols-1 gap-2 text-xs font-bold" id="interest-options">
+            <label class="cursor-pointer">
+              <input type="radio" name="interest" value="🔥 Sí, lo compraría seguro" onchange="updateInterestSelection(this)" class="hidden" required>
+              <div class="interest-box p-3 bg-white border border-black/15 rounded-xl transition flex items-center justify-between text-[11px] uppercase tracking-wider">
+                <span>🔥 Sí, lo compraría seguro</span>
+                <span class="check-mark text-xs font-bold hidden">✓</span>
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="interest" value="🤔 Tal vez (depende del diseño final)" onchange="updateInterestSelection(this)" class="hidden">
+              <div class="interest-box p-3 bg-white border border-black/15 rounded-xl transition flex items-center justify-between text-[11px] uppercase tracking-wider">
+                <span>🤔 Tal vez</span>
+                <span class="check-mark text-xs font-bold hidden">✓</span>
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="interest" value="❌ No me gusta / No lo compraría" onchange="updateInterestSelection(this)" class="hidden">
+              <div class="interest-box p-3 bg-white border border-black/15 rounded-xl transition flex items-center justify-between text-[11px] uppercase tracking-wider">
+                <span>❌ No lo compraría</span>
+                <span class="check-mark text-xs font-bold hidden">✓</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 2. TALLA (DINÁMICA DEPENDIENDO DEL TIPO DE PRENDA) -->
+        <div>
+          <label class="block text-[10px] uppercase tracking-[0.2em] font-extrabold text-black mb-2">2. ¿Qué talla elegirías?</label>
+          <div id="size-buttons-container" class="flex flex-wrap gap-2"></div>
+          <input type="hidden" id="selected-size" name="size" value="M">
+        </div>
+
+        <!-- 3. COMENTARIO CON TAGS DE RESPUESTA RÁPIDA -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-[10px] uppercase tracking-[0.2em] font-extrabold text-black">3. Comentarios / Sugerencia (Opcional)</label>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-2">
+            <button type="button" onclick="addTag('🏷️ Precio justo')" class="text-[10px] font-bold bg-neutral-100 hover:bg-black hover:text-white border border-black/15 px-2.5 py-1 rounded-lg transition">🏷️ Precio justo</button>
+            <button type="button" onclick="addTag('🔥 Excelente precio')" class="text-[10px] font-bold bg-neutral-100 hover:bg-black hover:text-white border border-black/15 px-2.5 py-1 rounded-lg transition">🔥 Excelente precio</button>
+            <button type="button" onclick="addTag('💸 Algo elevado')" class="text-[10px] font-bold bg-neutral-100 hover:bg-black hover:text-white border border-black/15 px-2.5 py-1 rounded-lg transition">💸 Algo elevado</button>
+          </div>
+
+          <input type="text" id="comments-input" name="comments" placeholder="Ej. Me gustaría en color negro o sobre el precio..." class="w-full bg-neutral-100 border border-black/10 rounded-xl px-4 py-2.5 text-xs text-black font-semibold focus:outline-none focus:border-black">
+        </div>
+
+        <button type="submit" id="submit-btn" class="w-full bg-black text-white py-3.5 rounded-xl font-display font-extrabold uppercase tracking-[0.15em] text-xs hover:bg-neutral-800 transition shadow-md">
+          LANZAR MI VOTO
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL POST-VOTO DE WHATSAPP -->
+  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-black/10 w-full max-w-md rounded-3xl overflow-hidden shadow-2xl relative p-6 md:p-8 space-y-5">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-black hover:bg-black hover:text-white text-lg font-black w-10 h-10 flex items-center justify-center bg-neutral-100 rounded-full transition shadow-sm">
+        ✕
+      </button>
+
+      <div class="text-center pt-2 space-y-2">
+        <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+        <h3 class="font-display font-extrabold text-lg uppercase text-black">¡Voto Registrado!</h3>
+        <p class="text-xs text-neutral-600 max-w-xs mx-auto">
+          Tu opinión fue registrada en NYXEN. Si quieres que te avisemos prioritariamente cuando llegue el pedido, déjanos tu WhatsApp:
+        </p>
+      </div>
+
+      <form id="contact-form" onsubmit="submitContact(event)" class="space-y-4">
+        <div>
+          <label class="block text-[10px] uppercase tracking-[0.2em] font-extrabold text-black mb-1">WhatsApp de Contacto (Opcional)</label>
+          <input type="tel" id="contact-whatsapp" placeholder="+52 984 000 0000" class="w-full bg-neutral-100 border border-black/15 rounded-xl px-4 py-3 text-xs text-black font-semibold focus:outline-none focus:border-black">
+        </div>
+
+        <button type="submit" id="contact-btn" class="w-full bg-black text-white py-3.5 rounded-xl font-display font-extrabold uppercase tracking-[0.15em] text-xs hover:bg-neutral-800 transition shadow-md">
+          📱 QUIERO AVISO DE LLEGADA
+        </button>
+
+        <button type="button" onclick="closeContactModal()" class="w-full text-center text-xs text-neutral-400 hover:text-black font-bold uppercase tracking-wider py-1 transition">
+          No por ahora, ver más prendas &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="border-t border-black/10 py-6 text-center text-xs text-neutral-400 mt-auto bg-white flex flex-col items-center justify-center gap-1">
+    <p class="font-bold text-black tracking-widest uppercase">NYXEN NIGHT CLUB</p>
+    <p class="font-semibold tracking-wider text-[11px]">© 2026 NYXEN CLOTHING — PLAYA DEL CARMEN</p>
+  </footer>
+
+  <!-- SCRIPT BASE DE DATOS Y LÓGICA COMPLETA -->
+  <script>
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby3lgPn_sJog0U5UE5JDc9meTHI-QD9en8DtUCvJl2sKCJPtphNSlTnGeMy3ElT-UMy/exec";
+
+    const products = [
+      // ================= HOMBRE =================
+      { id: 1, name: "BOXERS OFF WHITE", mainCat: "accesorios", subCat: "boxers", gender: "hombre", price: "$200 - $250 MXN", imgs: ["https://lh3.googleusercontent.com/d/1YO_EKe4jZLvnvJ3i9AQv8dUyxb87tcKz=s1000"] },
+      { id: 2, name: "CALCETINES NIKE BLANCOS", mainCat: "accesorios", subCat: "calcetines", gender: "hombre", price: "$40 - $50 MXN", imgs: ["https://lh3.googleusercontent.com/d/1aro8mwALNGsGsSLZ6DxwObKhtBye6XRz=s1000"] },
+      { id: 3, name: "CALCETINES NIKE NEGROS", mainCat: "accesorios", subCat: "calcetines", gender: "hombre", price: "$40 - $50 MXN", imgs: ["https://lh3.googleusercontent.com/d/1_ja1LABiYJKikXDVxtl-2JkT57SOeJzS=s1000"] },
+      { id: 30, name: "PULSERA VANCLEEF SILVER", mainCat: "accesorios", subCat: "joyeria", gender: "hombre", price: "$100 - $150 MXN", imgs: ["https://lh3.googleusercontent.com/d/1zAyR5uwetTmgQPEUOHk55NSGpAff-Qx5=s1000", "https://lh3.googleusercontent.com/d/1qE3OD_Y84o2jXY_FCoTHplf_addZyhJ9=s1000"] },
+
+      { id: 4, name: "ESSENTIALS HOODIE GRIS", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$690 - $820 MXN", imgs: ["https://lh3.googleusercontent.com/d/1Sjdak4LR8z3be9sSMc6EgXGEPi23lW59=s1000"] },
+      { id: 5, name: "HELLSTAR SUDADERA 01", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$650 - $780 MXN", imgs: ["https://lh3.googleusercontent.com/d/1LB-cUrmSfR310NiIDlok0DXC55CGqcDe=s1000"] },
+      { id: 6, name: "HELLSTAR SUDADERA 02", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$650 - $780 MXN", imgs: ["https://lh3.googleusercontent.com/d/1PeSJe1azn4C03icBeZKDLD4dAjm3PQ0r=s1000"] },
+      { id: 7, name: "HELLSTAR SUDADERA 03", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$650 - $780 MXN", imgs: ["https://lh3.googleusercontent.com/d/15CkHEalLtQ5C9kwdjg2eRl_tLFeRg-n1=s1000"] },
+      { id: 8, name: "PLAYERA NP CUELLO REDONDO TENIS BLANCA", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$300 - $400 MXN", imgs: ["https://lh3.googleusercontent.com/d/1IRN7Z7owOmM_UEgiDL0OKvoNQVh5CSb_=s1000", "https://lh3.googleusercontent.com/d/1NynYj9FGqWWsYA-AOuUvgt97_9kSEKTy=s1000"] },
+      { id: 10, name: "PLAYERA NP TENIS CUELLO REDONDO", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$300 - $400 MXN", imgs: ["https://lh3.googleusercontent.com/d/13I3c0JCKA4Zl3M9qcOEdO4EH3Jy8UbWU=s1000", "https://lh3.googleusercontent.com/d/1IPDKFdu8L-U2K4vzDUSKIcfbLqEATc9o=s1000"] },
+      { id: 11, name: "POLO RALPH LAUREN CUELLO REDONDO BLANCO", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$300 - $350 MXN", imgs: ["https://lh3.googleusercontent.com/d/16XUJEF6Gcj4TnDazrNOTOVwNlZXG7F3c=s1000"] },
+      { id: 12, name: "POLO RALPH LAUREN CUELLO REDONDO NEGRO", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$300 - $350 MXN", imgs: ["https://lh3.googleusercontent.com/d/1KnUWHRQ4K_mzenLwwdhZdTOQIAREQaBj=s1000"] },
+      { id: 13, name: "STUSSY PLAYERA", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$400 - $450 MXN", imgs: ["https://lh3.googleusercontent.com/d/1B4iJwrhS2Wgh8kKdh0tQDvg0iuKBnMjZ=s1000", "https://lh3.googleusercontent.com/d/1bgNxg-M8vNeM1g33yfRmdD3JXke8uH_C=s1000"] },
+      { id: 14, name: "TOMMY HILFIGER AZUL", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$400 - $450 MXN", imgs: ["https://lh3.googleusercontent.com/d/1QJ1TppusjP0f83qfXHG0tZyTrgWexwLp=s1000"] },
+      { id: 15, name: "TOMMY HILFIGER BLANCA", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$400 - $450 MXN", imgs: ["https://lh3.googleusercontent.com/d/1tv8OcCw4OAS_dvkhzYKLCP6t1Nl8n1Xu=s1000"] },
+      { id: 16, name: "TOMMY HILFIGER NEGRA", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$400 - $450 MXN", imgs: ["https://lh3.googleusercontent.com/d/1ZKxB5tybVz7RI3BL2flT3ANHuMhW0B2V=s1000"] },
+      { id: 17, name: "TRUE RELIGION HOODIE ZIP", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$850 - $900 MXN", imgs: ["https://lh3.googleusercontent.com/d/1Pr5Kgg_oJPNQ4MlcA6xNQbxHS9njEw37=s1000"] },
+      { id: 18, name: "GYMSHARK TANK", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$300 - $350 MXN", imgs: ["https://lh3.googleusercontent.com/d/1V_qeE_rmcejlqK-FRQ_Cc4sihygaW8Zx=s1000"] },
+
+      { id: 23, name: "PLAYERA COLDCULTURE AZUL", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$250 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/16LWXvPwMzZWKoiKWgHtvWOdW_LUtphO8=s1000"] },
+      { id: 24, name: "PLAYERA COLDCULTURE BLANCA", mainCat: "superior", subCat: "playeras", gender: "hombre", price: "$250 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/1cU03iakVnUXzQ-Yy7XnILo_ohRsVfkmZ=s1000", "https://lh3.googleusercontent.com/d/1ax2xADKUfmfZsD4FMpCi9H1NSBt1LRwH=s1000"] },
+      { id: 25, name: "ADIDAS CHAQUETA AÑO NUEVO CHINO", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$900 - $1000 MXN", imgs: ["https://lh3.googleusercontent.com/d/1KOzibj9U20krKcNludHnDeaJmDnO4r0d=s1000", "https://lh3.googleusercontent.com/d/1f11lh10EUB1WY4Nn5toIUxbqA_BTT3mF=s1000"] },
+      { id: 26, name: "LACOSTE HOODIE ZIP BLANCA", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$650 - $800 MXN", imgs: ["https://lh3.googleusercontent.com/d/1acoKEDHuH7gsF5OeDcJe2EA9Zk4Ducl9=s1000", "https://lh3.googleusercontent.com/d/1oyWkovoKbvtdMIDajMPBQBwT2C9JiNMm=s1000"] },
+      { id: 27, name: "NIKE CHAMARRA ROMPEVIENTO", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$550 - $700 MXN", imgs: ["https://lh3.googleusercontent.com/d/168icLn8xVS5GnfGp0DUyri65a3yquEMa=s1000", "https://lh3.googleusercontent.com/d/1LAZ8NeSE40l5YcfLXM8_9UUxvHCUp7qk=s1000"] },
+      { id: 28, name: "NIKE CHAMARRA REVERSIBLE", mainCat: "superior", subCat: "sudaderas", gender: "hombre", price: "$650 - $800 MXN", imgs: ["https://lh3.googleusercontent.com/d/1HIgoicm-yrPyBNAaA9LPXHcXBDeN3lZ3=s1000", "https://lh3.googleusercontent.com/d/1vz_50h6QeyJxLcwwx_zEIlyvqYB8h6sN=s1000"] },
+
+      { id: 19, name: "ADIDAS JOGGY PANTS", mainCat: "inferior", subCat: "pants", gender: "hombre", price: "$550 - $600 MXN", imgs: ["https://lh3.googleusercontent.com/d/1fDvDSF_v8CY6h6tSTc6dB9PZdFFTwQBQ=s1000", "https://lh3.googleusercontent.com/d/13HfXbpyccEK66WLYoVNVwhWN62SKolYP=s1000"] },
+      { id: 20, name: "GYMSHARK SHORTS", mainCat: "inferior", subCat: "shorts", gender: "hombre", price: "$250 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/11eU75RLXgL9Ycgh4kcSBd0AFSE0528W2=s1000"] },
+      { id: 21, name: "NOCTA REFLECTIVE PANTS NEGROS", mainCat: "inferior", subCat: "pants", gender: "hombre", price: "$450 - $500 MXN", imgs: ["https://lh3.googleusercontent.com/d/1iUr8hi5wwzI4SIs9o-7JlqyOoFncKvIU=s1000", "https://lh3.googleusercontent.com/d/1dSO7eik9YKmhtJW-giV9QoVKzxqYP7cx=s1000"] },
+      { id: 22, name: "NOCTA REFLECTIVE PANTS GRISES", mainCat: "inferior", subCat: "pants", gender: "hombre", price: "$450 - $500 MXN", imgs: ["https://lh3.googleusercontent.com/d/1tmrs-pci9zzR3d1IYTE9js2ooZIuMhyr=s1000", "https://lh3.googleusercontent.com/d/1rSjs6KlzArnXGjQt8CqiKs_71dQ6kw_S=s1000"] },
+      { id: 29, name: "SUPREME NIKE PANTS", mainCat: "inferior", subCat: "pants", gender: "hombre", price: "$1000 - $1200 MXN", imgs: ["https://lh3.googleusercontent.com/d/1rvYtrX-eJFOjx_9wZLan_uR2WfEm7jjq=s1000", "https://lh3.googleusercontent.com/d/1Xfa-zdFbWJY-bMAAqI1KkGxsAkNz-5AE=s1000"] },
+
+      // ================= MUJER =================
+      // SUPERIOR
+      { id: 101, name: "ALO TOP BLANCO", mainCat: "superior", subCat: "tops", gender: "mujer", price: "$200 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/1NP6dV7X5jkfrpjbk8aBdBmNa4dBR1tRX=s1000", "https://lh3.googleusercontent.com/d/1ipjp1El1B7ngMt0jRoY6gREEgbIiEcpV=s1000"] },
+      { id: 102, name: "TOP BRA NEGRO LULULEMON", mainCat: "superior", subCat: "tops", gender: "mujer", price: "$250 - $400 MXN", imgs: ["https://lh3.googleusercontent.com/d/1ZOyho8_rZLddFPY_90toeHggepaf7cZ0=s1000", "https://lh3.googleusercontent.com/d/1MqV6lKqOjN_wRZDdU6lvoLGR71mUxm21=s1000"] },
+      { id: 103, name: "TOP BRA ROSA LULULEMON", mainCat: "superior", subCat: "tops", gender: "mujer", price: "$250 - $400 MXN", imgs: ["https://lh3.googleusercontent.com/d/17pcllmq25bgJh3FaPnu-WX6VMAIEx2I5=s1000", "https://lh3.googleusercontent.com/d/1SbVzEbNOTYnxjlH0H5XhxKT4Lgafg-Qw=s1000"] },
+      { id: 104, name: "LACOSTE ZIP SUDADERA", mainCat: "superior", subCat: "sudaderas", gender: "mujer", price: "$500 - $600 MXN", imgs: ["https://lh3.googleusercontent.com/d/1Cpm2sdhCwd0DGH3lj5Jy1zuXjqb06wZH=s1000"] },
+      { id: 105, name: "LACOSTE SUDADERA ROSA", mainCat: "superior", subCat: "sudaderas", gender: "mujer", price: "$700 - $800 MXN", imgs: ["https://lh3.googleusercontent.com/d/1xoDBp1eklExORx6yOGXz_N5mL87xE2uc=s1000"] },
+      { id: 119, name: "CORSET ANIMAL PRINT", mainCat: "superior", subCat: "corsets", gender: "mujer", price: "$699 MXN", sizeType: "corset", imgs: ["https://lh3.googleusercontent.com/d/1sZgBZUKzdQMNXOPdxKTLtbNhF59Mnsgu=s1000"] },
+      { id: 120, name: "CORSET CREMA", mainCat: "superior", subCat: "corsets", gender: "mujer", price: "$699 MXN", sizeType: "corset", imgs: ["https://lh3.googleusercontent.com/d/1RXfIbb8c9iYY4ngze5uVZaTbwk4cDqWv=s1000"] },
+      { id: 121, name: "CORTEIZ TOP", mainCat: "superior", subCat: "tops", gender: "mujer", price: "$120 - $150 MXN", imgs: ["https://lh3.googleusercontent.com/d/1Wsm5xl8HChq3KlDbT2dvXSnYWfz2rHA6=s1000", "https://lh3.googleusercontent.com/d/1PBPUy3BWWU9E7K9OHyaz1csVJuC5dgEv=s1000"] },
+      { id: 122, name: "TOP DIESEL", mainCat: "superior", subCat: "tops", gender: "mujer", price: "$300 - $350 MXN", imgs: ["https://lh3.googleusercontent.com/d/106NkMEalL2aGfqu2bjiNgSnOeP6GbHsS=s1000"] },
+      { id: 123, name: "CONJUNTO ALO NEGRO", mainCat: "superior", subCat: "conjuntos", gender: "mujer", price: "$550 - $600 MXN", imgs: ["https://lh3.googleusercontent.com/d/1-tglFwyy9OfiGV3nQm3VlMe3usrefeky=s1000"] },
+      { id: 124, name: "CONJUNTO ALO BLANCO", mainCat: "superior", subCat: "conjuntos", gender: "mujer", price: "$550 - $600 MXN", imgs: ["https://lh3.googleusercontent.com/d/1u5Slr0X2Wf0OVJi4W-wmlxNNDG3dnGE8=s1000"] },
+
+      // INFERIOR
+      { id: 106, name: "ZARA FLARE JEANS", mainCat: "inferior", subCat: "jeans", gender: "mujer", price: "$550 - $700 MXN", imgs: ["https://lh3.googleusercontent.com/d/1k8itTBExa5E4yfaa8otMp_RzpfgE5e_G=s1000"] },
+      { id: 125, name: "ALO PANTS NEGRO", mainCat: "inferior", subCat: "pants", gender: "mujer", price: "$550 - $699 MXN", imgs: ["https://lh3.googleusercontent.com/d/1xQZqGbYX4xsxks0V1EweojiI5F9zH7RQ=s1000"] },
+      { id: 126, name: "ALO PANTS SLIM AZUL", mainCat: "inferior", subCat: "pants", gender: "mujer", price: "$550 - $699 MXN", imgs: ["https://lh3.googleusercontent.com/d/1I1BOEP91EzXg5hvSsdP5H396rMzC4HwJ=s1000"] },
+      { id: 127, name: "ALO PANTS SLIM NEGRO", mainCat: "inferior", subCat: "pants", gender: "mujer", price: "$550 - $699 MXN", imgs: ["https://lh3.googleusercontent.com/d/1HKPQSeoenbKz3F7OixpEPVKTDw9axwHM=s1000"] },
+      { id: 128, name: "ALO PANTS SLIM ROSA", mainCat: "inferior", subCat: "pants", gender: "mujer", price: "$550 - $699 MXN", imgs: ["https://lh3.googleusercontent.com/d/1OmunUZYpXLU4WVhZdEd1dZaYgBC96YPe=s1000"] },
+      { id: 129, name: "ALO YOGA SHORTS", mainCat: "inferior", subCat: "shorts", gender: "mujer", price: "$450 - $599 MXN", imgs: ["https://lh3.googleusercontent.com/d/1cgb02LEwPaad1B5X43ErNxaRvmfqV2wh=s1000", "https://lh3.googleusercontent.com/d/14mauAefhLfH5rBjl769ohnYUQ68A8uKf=s1000"] },
+      { id: 130, name: "CALVIN KLEIN SHORTS", mainCat: "inferior", subCat: "shorts", gender: "mujer", price: "$300 - $350 MXN", imgs: ["https://lh3.googleusercontent.com/d/1AvEDJgQ5hLPxh_HapPSrtpcJOHQQCFTI=s1000", "https://lh3.googleusercontent.com/d/1ZGVQoMTHrT6m_BeawQULoaMF8GxRKRaK=s1000"] },
+
+      // ACCESORIOS
+      { id: 107, name: "ALO BANDA DE CABELLO", mainCat: "accesorios", subCat: "cabello", gender: "mujer", price: "$150 - $200 MXN", imgs: ["https://lh3.googleusercontent.com/d/13OQUpYHFDbBqYE-SA90V0sx8lf1YZR_i=s1000", "https://lh3.googleusercontent.com/d/17BVklhOPWYfu9jZMsTq8tjjRB2jie2ZX=s1000"] },
+      { id: 108, name: "BOLSA ALO YOGA", mainCat: "accesorios", subCat: "bolsos", gender: "mujer", price: "$250 - $350 MXN", imgs: ["https://lh3.googleusercontent.com/d/15iVO7Cn2j5AXj6MvoOmXoJWNrKcUijdS=s1000", "https://lh3.googleusercontent.com/d/1rLxbmMLZ8CIRLPmDOZ1M1RhHQ4gBnSeM=s1000"] },
+      { id: 109, name: "CARTERA MIU MIU BLANCA", mainCat: "accesorios", subCat: "carteras", gender: "mujer", price: "$300 - $450 MXN", imgs: ["https://lh3.googleusercontent.com/d/1gV9_mym2CYWA0eyyvr34F5pYV1tHIX2z=s1000"] },
+      { id: 110, name: "COSMETIQUERA DIOR", mainCat: "accesorios", subCat: "cosmetiqueras", gender: "mujer", price: "$300 - $350 MXN", badge: "✦ DISPONIBLE PARA VENTA", imgs: ["https://lh3.googleusercontent.com/d/1vHW3M1_aHM-IRws_ztxIdu0GqnooztHf=s1000"] },
+      { id: 111, name: "GANCHO ALO BLANCO", mainCat: "accesorios", subCat: "ganchos", gender: "mujer", price: "$200 MXN", imgs: ["https://lh3.googleusercontent.com/d/1H7r-YfXzXkbQhq02diZDyVoghIytu8a4=s1000"] },
+      { id: 112, name: "GANCHO ALO CAFE", mainCat: "accesorios", subCat: "ganchos", gender: "mujer", price: "$200 MXN", imgs: ["https://lh3.googleusercontent.com/d/1WK3IysplrFc0Wjzaj_FUNx1rPyOv_emC=s1000"] },
+      { id: 113, name: "GANCHO ALO NEGRO", mainCat: "accesorios", subCat: "ganchos", gender: "mujer", price: "$200 MXN", imgs: ["https://lh3.googleusercontent.com/d/1iWpLj-qP-H3CSMxFef5BNmvA8Nl6nLEp=s1000"] },
+      { id: 114, name: "GANCHO ALO ROSA", mainCat: "accesorios", subCat: "ganchos", gender: "mujer", price: "$200 MXN", badge: "✦ DISPONIBLE PARA VENTA", imgs: ["https://lh3.googleusercontent.com/d/1N5CGfD8YxBLpSPzXl1k-cyo7VVb7GxN1=s1000"] },
+      { id: 115, name: "PULSERA VANCLEEF GOLD", mainCat: "accesorios", subCat: "joyeria", gender: "mujer", price: "$100 - $150 MXN", imgs: ["https://lh3.googleusercontent.com/d/1Cw_Vqljh9pVMq38H04sxPtMZm0SjCpfl=s1000"] },
+      { id: 116, name: "TARJETERO YSL BLANCO", mainCat: "accesorios", subCat: "carteras", gender: "mujer", price: "$250 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/1RFdfblkw4HbLEmj4Jltnvc89FdD33pU-=s1000"] },
+      { id: 117, name: "TARJETERO YSL NEGRO", mainCat: "accesorios", subCat: "carteras", gender: "mujer", price: "$250 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/1iTKjddHqgAxx3lmvvPijxNGeh4s7b4Nz=s1000"] },
+      { id: 118, name: "TARJETERO YSL ROSA", mainCat: "accesorios", subCat: "carteras", gender: "mujer", price: "$250 - $300 MXN", imgs: ["https://lh3.googleusercontent.com/d/15nEuIOK31oyfKiulJpWPocCjEbnFzS46=s1000"] },
+      { id: 131, name: "ARETES CHANEL ORO", mainCat: "accesorios", subCat: "joyeria", gender: "mujer", price: "$500 - $550 MXN", imgs: ["https://lh3.googleusercontent.com/d/1K3nBCwoVaUeHcy545xdLXK9hDfKHeehl=s1000"] },
+      { id: 132, name: "ARETES CHANEL PLATA", mainCat: "accesorios", subCat: "joyeria", gender: "mujer", price: "$500 - $550 MXN", imgs: ["https://lh3.googleusercontent.com/d/1O9oZY-TLMGo2Bnp4xTgFMxrg52rSL6_E=s1000"] },
+      { id: 133, name: "ARETES CHANEL MOÑO", mainCat: "accesorios", subCat: "joyeria", gender: "mujer", price: "$500 - $550 MXN", imgs: ["https://lh3.googleusercontent.com/d/1jEH4JV70h2NsZ1sHfjl84m2YmrDherz3=s1000"] },
+      { id: 134, name: "COLLAR SWAROVSKI", mainCat: "accesorios", subCat: "joyeria", gender: "mujer", price: "$700 - $849 MXN", imgs: ["https://lh3.googleusercontent.com/d/1KjWxouyc1RTUWi-8SuK9DepVFKT5wLl6=s1000"] }
+    ];
+
+    const categoryBanners = {
+      hombre: { 
+        superior: "https://lh3.googleusercontent.com/d/1Sjdak4LR8z3be9sSMc6EgXGEPi23lW59=s1000", 
+        inferior: "https://lh3.googleusercontent.com/d/1fDvDSF_v8CY6h6tSTc6dB9PZdFFTwQBQ=s1000", 
+        accesorios: "https://lh3.googleusercontent.com/d/1aro8mwALNGsGsSLZ6DxwObKhtBye6XRz=s1000" 
+      },
+      mujer: { 
+        superior: "https://lh3.googleusercontent.com/d/1sZgBZUKzdQMNXOPdxKTLtbNhF59Mnsgu=s1000", 
+        inferior: "https://lh3.googleusercontent.com/d/1xQZqGbYX4xsxks0V1EweojiI5F9zH7RQ=s1000", 
+        accesorios: "https://lh3.googleusercontent.com/d/1K3nBCwoVaUeHcy545xdLXK9hDfKHeehl=s1000" 
+      }
+    };
+
+    const subFiltersConfig = {
+      hombre: {
+        superior: [{ id: "todos", name: "TODOS" }, { id: "playeras", name: "PLAYERAS" }, { id: "sudaderas", name: "SUDADERAS" }],
+        inferior: [{ id: "todos", name: "TODOS" }, { id: "pants", name: "PANTS" }, { id: "shorts", name: "SHORTS" }],
+        accesorios: [{ id: "todos", name: "TODOS" }, { id: "calcetines", name: "CALCETINES" }, { id: "boxers", name: "BOXERS" }, { id: "joyeria", name: "JOYERÍA" }]
+      },
+      mujer: {
+        superior: [{ id: "todos", name: "TODOS" }, { id: "corsets", name: "CORSETS" }, { id: "tops", name: "TOPS" }, { id: "conjuntos", name: "CONJUNTOS" }, { id: "sudaderas", name: "SUDADERAS" }],
+        inferior: [{ id: "todos", name: "TODOS" }, { id: "pants", name: "PANTS" }, { id: "shorts", name: "SHORTS" }, { id: "jeans", name: "JEANS" }],
+        accesorios: [{ id: "todos", name: "TODOS" }, { id: "joyeria", name: "JOYERÍA" }, { id: "carteras", name: "CARTERAS" }, { id: "bolsos", name: "BOLSOS" }, { id: "ganchos", name: "GANCHOS" }, { id: "cabello", name: "CABELLO" }]
+      }
+    };
+
+    let currentGender = 'hombre';
+    let currentMainCat = 'superior';
+    let currentSubFilter = 'todos';
+    let activeImageIndexes = {};
+    let lastVoteData = null;
+
+    function openInfoModal() { document.getElementById('info-modal').classList.remove('hidden'); }
+    function closeInfoModal() { document.getElementById('info-modal').classList.add('hidden'); }
+
+    function showNivel1() {
+      document.getElementById('nivel-1').classList.remove('hidden');
+      document.getElementById('nivel-2').classList.add('hidden');
+      document.getElementById('nivel-3').classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function selectGender(gender) {
+      currentGender = gender;
+      document.getElementById('nivel-1').classList.add('hidden');
+      document.getElementById('nivel-2').classList.remove('hidden');
+      document.getElementById('nivel-3').classList.add('hidden');
+      document.getElementById('nivel-2-title').innerText = `COLECCIÓN ${gender.toUpperCase()}`;
+
+      document.getElementById('img-cat-superior').src = categoryBanners[gender].superior;
+      document.getElementById('img-cat-inferior').src = categoryBanners[gender].inferior;
+      document.getElementById('img-cat-accesorios').src = categoryBanners[gender].accesorios;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showNivel2() {
+      document.getElementById('nivel-1').classList.add('hidden');
+      document.getElementById('nivel-2').classList.remove('hidden');
+      document.getElementById('nivel-3').classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function selectCategory(mainCat) {
+      currentMainCat = mainCat;
+      currentSubFilter = 'todos';
+      document.getElementById('nivel-2').classList.add('hidden');
+      document.getElementById('nivel-3').classList.remove('hidden');
+
+      const catNames = { superior: "PRENDA SUPERIOR", inferior: "PRENDA INFERIOR", accesorios: "ACCESORIOS" };
+      document.getElementById('nivel-3-title').innerText = catNames[mainCat];
+      document.getElementById('breadcrumb-tag').innerText = `NYXEN // ${currentGender.toUpperCase()} // ${catNames[mainCat]}`;
+
+      renderSubFilters();
+      renderProducts();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderSubFilters() {
+      const container = document.getElementById('subfilters-container');
+      container.innerHTML = '';
+      const filters = subFiltersConfig[currentGender]?.[currentMainCat] || [{ id: "todos", name: "TODOS" }];
+      filters.forEach(f => {
+        const activeClass = f.id === currentSubFilter ? "bg-black text-white border-black" : "bg-white text-black/60 hover:text-black border-black/10";
+        container.innerHTML += `<button onclick="applySubFilter('${f.id}')" class="${activeClass} px-5 py-2.5 rounded-full border transition duration-200">${f.name}</button>`;
+      });
+    }
+
+    function applySubFilter(subCatId) {
+      currentSubFilter = subCatId;
+      renderSubFilters();
+      renderProducts();
+    }
+
+    function updateInterestSelection(radioInput) {
+      const boxes = document.querySelectorAll('.interest-box');
+      const marks = document.querySelectorAll('.check-mark');
+
+      boxes.forEach(box => {
+        box.classList.remove('border-black', 'bg-black', 'text-white');
+        box.classList.add('bg-white', 'border-black/15');
+      });
+      marks.forEach(mark => mark.classList.add('hidden'));
+
+      const parentBox = radioInput.nextElementSibling;
+      const checkSpan = parentBox.querySelector('.check-mark');
+
+      parentBox.classList.remove('bg-white', 'border-black/15');
+      parentBox.classList.add('border-black', 'bg-black', 'text-white');
+      if (checkSpan) checkSpan.classList.remove('hidden');
+    }
+
+    function addTag(text) {
+      const input = document.getElementById('comments-input');
+      if (input.value.trim() === "") {
+        input.value = text;
+      } else {
+        input.value += " | " + text;
+      }
+      input.focus();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      grid.innerHTML = '';
+
+      const filtered = products.filter(p => p.gender === currentGender && p.mainCat === currentMainCat && (currentSubFilter === 'todos' || p.subCat === currentSubFilter));
+
+      if(filtered.length === 0) {
+        grid.innerHTML = `<p class="col-span-full text-center text-black/40 py-20 font-semibold text-sm">Próximamente agregaremos prendas en esta sección.</p>`;
+        return;
+      }
+
+      filtered.forEach(p => {
+        if (activeImageIndexes[p.id] === undefined) { activeImageIndexes[p.id] = 0; }
+        const currentIdx = activeImageIndexes[p.id];
+        const isMulti = p.imgs.length > 1;
+
+        grid.innerHTML += `
+          <div class="bg-white border border-black/10 rounded-2xl overflow-hidden group hover:border-black/30 transition duration-300 flex flex-col editorial-shadow">
+            <div class="aspect-[3/4] relative overflow-hidden bg-neutral-100" 
+                 ontouchstart="handleTouchStart(event, ${p.id})" 
+                 ontouchend="handleTouchEnd(event, ${p.id})">
+              <img id="img-product-${p.id}" src="${p.imgs[currentIdx]}" class="img-zoom w-full h-full object-cover" alt="${p.name}">
+
+              <span class="absolute top-3 left-3 bg-black text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full tracking-wider shadow-lg z-10 pointer-events-none">
+                ${p.price}
+              </span>
+
+              ${p.badge ? `
+                <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[9px] font-extrabold px-2.5 py-1 rounded-full tracking-wider shadow-md z-10 animate-pulse">
+                  ${p.badge}
+                </span>
+              ` : ''}
+
+              ${isMulti ? `
+                <div class="absolute bottom-3 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-md px-2 py-1 rounded-full z-10">
+                  <button onclick="prevImage(event, ${p.id})" class="text-white text-xs px-1.5 py-0.5 hover:text-neutral-300 font-bold">⟨</button>
+                  <span id="dots-product-${p.id}" class="text-[9px] text-white font-bold tracking-widest">${currentIdx + 1}/${p.imgs.length}</span>
+                  <button onclick="nextImage(event, ${p.id})" class="text-white text-xs px-1.5 py-0.5 hover:text-neutral-300 font-bold">⟩</button>
+                </div>
+              ` : ''}
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-[9px] text-neutral-400 uppercase tracking-[0.2em] font-extrabold block">${p.subCat}</span>
+                <h4 class="font-display font-extrabold text-sm tracking-tight uppercase leading-snug mt-1 text-black">${p.name}</h4>
+              </div>
+
+              <button onclick="openSurvey(${p.id}, '${p.name}', '${p.price}')" class="w-full bg-black text-white hover:bg-neutral-800 py-3 rounded-xl text-xs font-display font-extrabold uppercase tracking-widest transition shadow-sm">
+                ✦ EVALUAR PRENDA
+              </button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleTouchStart(e, productId) { touchStartX = e.changedTouches[0].screenX; }
+    function handleTouchEnd(e, productId) { touchEndX = e.changedTouches[0].screenX; handleSwipe(productId); }
+
+    function handleSwipe(productId) {
+      const p = products.find(prod => prod.id === productId);
+      if(!p || p.imgs.length <= 1) return;
+
+      const threshold = 50;
+      if (touchEndX < touchStartX - threshold) {
+        activeImageIndexes[productId] = (activeImageIndexes[productId] + 1) % p.imgs.length;
+        updateProductCardImage(p);
+      }
+      if (touchEndX > touchStartX + threshold) {
+        activeImageIndexes[productId] = (activeImageIndexes[productId] - 1 + p.imgs.length) % p.imgs.length;
+        updateProductCardImage(p);
+      }
+    }
+
+    function prevImage(e, productId) {
+      e.stopPropagation();
+      const p = products.find(prod => prod.id === productId);
+      if(!p) return;
+      activeImageIndexes[productId] = (activeImageIndexes[productId] - 1 + p.imgs.length) % p.imgs.length;
+      updateProductCardImage(p);
+    }
+
+    function nextImage(e, productId) {
+      e.stopPropagation();
+      const p = products.find(prod => prod.id === productId);
+      if(!p) return;
+      activeImageIndexes[productId] = (activeImageIndexes[productId] + 1) % p.imgs.length;
+      updateProductCardImage(p);
+    }
+
+    function updateProductCardImage(product) {
+      const idx = activeImageIndexes[product.id];
+      const imgEl = document.getElementById(`img-product-${product.id}`);
+      const dotsEl = document.getElementById(`dots-product-${product.id}`);
+      if(imgEl) imgEl.src = product.imgs[idx];
+      if(dotsEl) dotsEl.innerText = `${idx + 1}/${product.imgs.length}`;
+    }
+
+    function openSurvey(id, name, price) {
+      const prod = products.find(p => p.id === id);
+      document.getElementById('modal-product-id').value = id;
+      document.getElementById('modal-product-name').value = name;
+      document.getElementById('modal-product-title').innerText = name;
+      document.getElementById('modal-product-price').innerText = "Precio estimado: " + price;
+
+      const sizeContainer = document.getElementById('size-buttons-container');
+      sizeContainer.innerHTML = '';
+
+      let sizes = ['S', 'M', 'L', 'XL', 'Única'];
+      if (prod && prod.sizeType === 'corset') {
+        sizes = ['34B/75', '36B/80', '38C/85', '40C/90'];
+      }
+
+      const defaultSize = sizes[0];
+      document.getElementById('selected-size').value = defaultSize;
+
+      sizes.forEach(sz => {
+        const isDefault = sz === defaultSize;
+        const btnClass = isDefault 
+          ? "size-btn flex-1 py-2.5 rounded-xl border border-black bg-black text-white text-xs font-bold transition"
+          : "size-btn flex-1 py-2.5 rounded-xl border border-black/20 bg-white text-xs font-bold hover:border-black transition";
+        sizeContainer.innerHTML += `<button type="button" onclick="setSize('${sz}', this)" class="${btnClass}">${sz}</button>`;
+      });
+
+      document.querySelectorAll('input[name="interest"]').forEach(r => r.checked = false);
+      document.querySelectorAll('.interest-box').forEach(box => {
+        box.classList.remove('border-black', 'bg-black', 'text-white');
+        box.classList.add('bg-white', 'border-black/15');
+      });
+      document.querySelectorAll('.check-mark').forEach(m => m.classList.add('hidden'));
+
+      document.getElementById('vote-modal').classList.remove('hidden');
+    }
+
+    function setSize(sizeVal, btnElement) {
+      document.getElementById('selected-size').value = sizeVal;
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.className = "size-btn flex-1 py-2.5 rounded-xl border border-black/20 bg-white text-xs font-bold hover:border-black transition";
+      });
+      btnElement.className = "size-btn flex-1 py-2.5 rounded-xl border border-black bg-black text-white text-xs font-bold transition";
+    }
+
+    function closeModal() { document.getElementById('vote-modal').classList.add('hidden'); }
+    function closeContactModal() { document.getElementById('contact-modal').classList.add('hidden'); }
+
+    function submitVote(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.innerText = "ENVIANDO...";
+      btn.disabled = true;
+
+      const formData = new FormData(e.target);
+      lastVoteData = Object.fromEntries(formData.entries());
+      lastVoteData.timestamp = new Date().toLocaleString("es-MX");
+      lastVoteData.whatsapp = "No proporcionado";
+
+      sendToGoogleSheets(lastVoteData);
+
+      btn.innerText = "LANZAR MI VOTO";
+      btn.disabled = false;
+      closeModal();
+
+      document.getElementById('contact-modal').classList.remove('hidden');
+      e.target.reset();
+    }
+
+    function submitContact(e) {
+      e.preventDefault();
+      const phone = document.getElementById('contact-whatsapp').value.trim();
+      if(phone && lastVoteData) {
+        lastVoteData.whatsapp = phone;
+        sendToGoogleSheets(lastVoteData);
+      }
+      closeContactModal();
+      document.getElementById('contact-form').reset();
+    }
+
+    function sendToGoogleSheets(data) {
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }).catch(err => console.log(err));
+    }
+  </script>
+</body>
+</html>
